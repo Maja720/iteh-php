@@ -12,8 +12,3 @@
     }else{
         echo json_encode($broker->izmeni('delete from stan where id='.$id));
     }
-    
-    
-
-
-?>

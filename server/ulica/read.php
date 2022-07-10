@@ -4,5 +4,3 @@
   
     
     echo json_encode($broker->vratiKolekciju('select * from ulica'));
-
-?>

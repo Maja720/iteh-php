@@ -12,7 +12,3 @@
         $rezultat=$broker->izmeni("insert into ulica(naziv) values ('".$naziv."') ");
        echo json_encode($rezultat);
     }
-       
-
-
-?>

@@ -1,5 +1,5 @@
 <?php
-    include 'header.php';
+include 'header.php';
 ?>
 
 <div class='container mt-2 mb-5'>
@@ -47,7 +47,7 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-    $(function () {
+    $(function() {
         ucitajOptions('server/ulica/read.php', 'ulica');
         ucitajOptions('server/kategorija/read.php', 'kategorija');
         $('#forma').submit(e => {
@@ -70,22 +70,20 @@
             fd.append("ulica", ulica);
             fd.append("kategorija", kategorija);
 
-            $.ajax(
-                {
-                    url: "./server/stan/create.php",
-                    type: 'post',
-                    data: fd,
-                    processData: false,
-                    contentType: false,
-                    success: function (data) {
-                        if (data != '200') {
-                            alert(data);
-                        }
+            $.ajax({
+                url: "./server/stan/create.php",
+                type: 'post',
+                data: fd,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    if (data != '200') {
+                        alert(data);
+                    }
 
-                    },
+                },
 
-                }
-            )
+            })
         })
     })
 
@@ -104,9 +102,8 @@
             }
         })
     }
-
 </script>
 
 <?php
-    include 'footer.php';
+include 'footer.php';
 ?>

@@ -1,5 +1,5 @@
 <?php
-    include 'header.php';
+include 'header.php';
 ?>
 
 <div class='container mt-2'>
@@ -35,20 +35,20 @@
     let stanovi = [];
     let ulice = [];
     let kategorije = [];
-    $(function () {
+    $(function() {
         $.getJSON('server/ulica/read.php').then((res => {
-            if (!res.status) {
-                alert(res.error);
-                return;
-            }
-            console.log('set ulice')
-            ulice = res.kolekcija;
-            for (let ulica of ulice) {
-                $('#ulice').append(`
+                if (!res.status) {
+                    alert(res.error);
+                    return;
+                }
+                console.log('set ulice')
+                ulice = res.kolekcija;
+                for (let ulica of ulice) {
+                    $('#ulice').append(`
                 <option value="${ulica.id}"> ${ulica.naziv}</option>
                 `)
-            }
-        }))
+                }
+            }))
             .then(() => {
                 return $.getJSON('server/kategorija/read.php')
 
@@ -84,6 +84,7 @@
             render();
         }))
     }
+
     function render() {
 
         const sort = Number($('#sort').val());
@@ -127,9 +128,12 @@
         }
 
     }
+
     function obrisi(id) {
         id = Number(id);
-        $.post('server/stan/delete.php', { id }).then(res => {
+        $.post('server/stan/delete.php', {
+            id
+        }).then(res => {
             res = JSON.parse(res);
             if (!res.status) {
                 alert(res.error);
@@ -143,5 +147,5 @@
 </script>
 
 <?php
-    include 'footer.php';
+include 'footer.php';
 ?>

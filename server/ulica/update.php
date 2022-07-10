@@ -15,7 +15,3 @@
         $rezultat=$broker->izmeni("update ulica set naziv='".$naziv."' where id=".$id);
        echo json_encode($rezultat);
     }
-       
-
-
-?>
